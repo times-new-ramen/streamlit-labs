@@ -1,13 +1,13 @@
 import streamlit as st
 import pandas as pd
 st.title('Streamlit con cache')
-DATA_URL= 'dataset.csv'
+DATA_URL= 'https://raw.githubusercontent.com/times-new-ramen/streamlit-labs/master/dataframes.py'
 @st.cache
 def load_data(nrows):
     data=pd.read_csv(DATA_URL, nrows=nrows)
     return data
 data_load_state= st.text('Loading data....')
-data= load_data(11)
+data= load_data(5000)
 data_load_state.text("Done!")
 
 st.dataframe(data)

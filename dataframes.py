@@ -6,3 +6,4 @@ names_data= pd.read_csv(names_link)
 st.title("Read CSV")
 
 st.dataframe(names_data)
+
