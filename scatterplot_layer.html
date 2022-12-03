@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>pydeck</title>
+        <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.13.0/mapbox-gl.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <script src='https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@~8.8.12/dist/index.js'></script>
+    <style>
+    body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#deck-container {
+  width: 100vw;
+  height: 100vh;
+}
+
+#deck-container canvas {
+  z-index: 1;
+  background: none;
+}
+    </style>
+  </head>
+  <body>
+    <div id="deck-container">
+    </div>
+  </body>
+  <script>
+    const container = document.getElementById('deck-container');
+    const jsonInput = {
+  "initialViewState": {
+    "bearing": 0,
+    "latitude": 0,
+    "longitude": 0,
+    "pitch": 0,
+    "zoom": 0
+  },
+  "layers": [
+    {
+      "@@type": "ScatterplotLayer",
+      "data": [
+        {
+          "Unnamed: 2": NaN,
+          "Unnamed: 3": NaN,
+          "Unnamed: 4": NaN,
+          "Unnamed: 5": NaN,
+          "Unnamed: 6": NaN,
+          "lat": 37.09024,
+          "lon": -95.712891
+        },
+        {
+          "Unnamed: 2": NaN,
+          "Unnamed: 3": NaN,
+          "Unnamed: 4": NaN,
+          "Unnamed: 5": NaN,
+          "Unnamed: 6": NaN,
+          "lat": 46.227638,
+          "lon": 2.213749
+        },
+        {
+          "Unnamed: 2": NaN,
+          "Unnamed: 3": NaN,
+          "Unnamed: 4": NaN,
+          "Unnamed: 5": NaN,
+          "Unnamed: 6": NaN,
+          "lat": 40.463667,
+          "lon": -3.74922
+        },
+        {
+          "Unnamed: 2": NaN,
+          "Unnamed: 3": NaN,
+          "Unnamed: 4": NaN,
+          "Unnamed: 5": NaN,
+          "Unnamed: 6": NaN,
+          "lat": 48.669026,
+          "lon": 19.699024
+        },
+        {
+          "Unnamed: 2": NaN,
+          "Unnamed: 3": NaN,
+          "Unnamed: 4": NaN,
+          "Unnamed: 5": NaN,
+          "Unnamed: 6": NaN,
+          "lat": 51.165691,
+          "lon": 10.451526
+        },
+        {
+          "Unnamed: 2": NaN,
+          "Unnamed: 3": NaN,
+          "Unnamed: 4": NaN,
+          "Unnamed: 5": NaN,
+          "Unnamed: 6": NaN,
+          "lat": 41.87194,
+          "lon": 12.56738
+        },
+        {
+          "Unnamed: 2": NaN,
+          "Unnamed: 3": NaN,
+          "Unnamed: 4": NaN,
+          "Unnamed: 5": NaN,
+          "Unnamed: 6": NaN,
+          "lat": 56.130366,
+          "lon": -106.346771
+        },
+        {
+          "Unnamed: 2": NaN,
+          "Unnamed: 3": NaN,
+          "Unnamed: 4": NaN,
+          "Unnamed: 5": NaN,
+          "Unnamed: 6": NaN,
+          "lat": 55.378051,
+          "lon": -3.435973
+        },
+        {
+          "Unnamed: 2": NaN,
+          "Unnamed: 3": NaN,
+          "Unnamed: 4": NaN,
+          "Unnamed: 5": NaN,
+          "Unnamed: 6": NaN,
+          "lat": 21.521757,
+          "lon": -77.781167
+        },
+        {
+          "Unnamed: 2": NaN,
+          "Unnamed: 3": NaN,
+          "Unnamed: 4": NaN,
+          "Unnamed: 5": NaN,
+          "Unnamed: 6": NaN,
+          "lat": 23.634501,
+          "lon": -102.552784
+        },
+        {
+          "Unnamed: 2": NaN,
+          "Unnamed: 3": NaN,
+          "Unnamed: 4": NaN,
+          "Unnamed: 5": NaN,
+          "Unnamed: 6": NaN,
+          "lat": 46.818188,
+          "lon": 8.227512
+        },
+        {
+          "Unnamed: 2": NaN,
+          "Unnamed: 3": NaN,
+          "Unnamed: 4": NaN,
+          "Unnamed: 5": NaN,
+          "Unnamed: 6": NaN,
+          "lat": 1.352083,
+          "lon": 103.819836
+        },
+        {
+          "Unnamed: 2": NaN,
+          "Unnamed: 3": NaN,
+          "Unnamed: 4": NaN,
+          "Unnamed: 5": NaN,
+          "Unnamed: 6": NaN,
+          "lat": 35.907757,
+          "lon": 127.766922
+        },
+        {
+          "Unnamed: 2": NaN,
+          "Unnamed: 3": NaN,
+          "Unnamed: 4": NaN,
+          "Unnamed: 5": NaN,
+          "Unnamed: 6": NaN,
+          "lat": 49.817492,
+          "lon": 15.472962
+        },
+        {
+          "Unnamed: 2": NaN,
+          "Unnamed: 3": NaN,
+          "Unnamed: 4": NaN,
+          "Unnamed: 5": NaN,
+          "Unnamed: 6": NaN,
+          "lat": 18.220833,
+          "lon": -66.590149
+        },
+        {
+          "Unnamed: 2": NaN,
+          "Unnamed: 3": NaN,
+          "Unnamed: 4": NaN,
+          "Unnamed: 5": NaN,
+          "Unnamed: 6": NaN,
+          "lat": 35.86166,
+          "lon": 104.195397
+        },
+        {
+          "Unnamed: 2": NaN,
+          "Unnamed: 3": NaN,
+          "Unnamed: 4": NaN,
+          "Unnamed: 5": NaN,
+          "Unnamed: 6": NaN,
+          "lat": 50.503887,
+          "lon": 4.469936
+        },
+        {
+          "Unnamed: 2": NaN,
+          "Unnamed: 3": NaN,
+          "Unnamed: 4": NaN,
+          "Unnamed: 5": NaN,
+          "Unnamed: 6": NaN,
+          "lat": 46.151241,
+          "lon": 14.995463
+        },
+        {
+          "Unnamed: 2": NaN,
+          "Unnamed: 3": NaN,
+          "Unnamed: 4": NaN,
+          "Unnamed: 5": NaN,
+          "Unnamed: 6": NaN,
+          "lat": 61.92411,
+          "lon": 25.748151
+        },
+        {
+          "Unnamed: 2": NaN,
+          "Unnamed: 3": NaN,
+          "Unnamed: 4": NaN,
+          "Unnamed: 5": NaN,
+          "Unnamed: 6": NaN,
+          "lat": 52.132633,
+          "lon": 5.291266
+        },
+        {
+          "Unnamed: 2": NaN,
+          "Unnamed: 3": NaN,
+          "Unnamed: 4": NaN,
+          "Unnamed: 5": NaN,
+          "Unnamed: 6": NaN,
+          "lat": 60.128161,
+          "lon": 18.643501
+        },
+        {
+          "Unnamed: 2": NaN,
+          "Unnamed: 3": NaN,
+          "Unnamed: 4": NaN,
+          "Unnamed: 5": NaN,
+          "Unnamed: 6": NaN,
+          "lat": 15.870032,
+          "lon": 100.992541
+        },
+        {
+          "Unnamed: 2": NaN,
+          "Unnamed: 3": NaN,
+          "Unnamed: 4": NaN,
+          "Unnamed: 5": NaN,
+          "Unnamed: 6": NaN,
+          "lat": 45.1,
+          "lon": 15.2
+        },
+        {
+          "Unnamed: 2": NaN,
+          "Unnamed: 3": NaN,
+          "Unnamed: 4": NaN,
+          "Unnamed: 5": NaN,
+          "Unnamed: 6": NaN,
+          "lat": -38.416097,
+          "lon": -63.616672
+        },
+        {
+          "Unnamed: 2": NaN,
+          "Unnamed: 3": NaN,
+          "Unnamed: 4": NaN,
+          "Unnamed: 5": NaN,
+          "Unnamed: 6": NaN,
+          "lat": -25.274398,
+          "lon": 133.775136
+        },
+        {
+          "Unnamed: 2": NaN,
+          "Unnamed: 3": NaN,
+          "Unnamed: 4": NaN,
+          "Unnamed: 5": NaN,
+          "Unnamed: 6": NaN,
+          "lat": 4.570868,
+          "lon": -74.297333
+        },
+        {
+          "Unnamed: 2": NaN,
+          "Unnamed: 3": NaN,
+          "Unnamed: 4": NaN,
+          "Unnamed: 5": NaN,
+          "Unnamed: 6": NaN,
+          "lat": -35.675147,
+          "lon": -71.542969
+        },
+        {
+          "Unnamed: 2": NaN,
+          "Unnamed: 3": NaN,
+          "Unnamed: 4": NaN,
+          "Unnamed: 5": NaN,
+          "Unnamed: 6": NaN,
+          "lat": 56.26392,
+          "lon": 9.501785
+        },
+        {
+          "Unnamed: 2": NaN,
+          "Unnamed: 3": NaN,
+          "Unnamed: 4": NaN,
+          "Unnamed: 5": NaN,
+          "Unnamed: 6": NaN,
+          "lat": 36.204824,
+          "lon": 138.252924
+        },
+        {
+          "Unnamed: 2": NaN,
+          "Unnamed: 3": NaN,
+          "Unnamed: 4": NaN,
+          "Unnamed: 5": NaN,
+          "Unnamed: 6": NaN,
+          "lat": 61.52401,
+          "lon": 105.318756
+        },
+        {
+          "Unnamed: 2": NaN,
+          "Unnamed: 3": NaN,
+          "Unnamed: 4": NaN,
+          "Unnamed: 5": NaN,
+          "Unnamed: 6": NaN,
+          "lat": 44.016521,
+          "lon": 21.005859
+        },
+        {
+          "Unnamed: 2": NaN,
+          "Unnamed: 3": NaN,
+          "Unnamed: 4": NaN,
+          "Unnamed: 5": NaN,
+          "Unnamed: 6": NaN,
+          "lat": 47.162494,
+          "lon": 19.503304
+        },
+        {
+          "Unnamed: 2": NaN,
+          "Unnamed: 3": NaN,
+          "Unnamed: 4": NaN,
+          "Unnamed: 5": NaN,
+          "Unnamed: 6": NaN,
+          "lat": 31.046051,
+          "lon": 34.851612
+        },
+        {
+          "Unnamed: 2": NaN,
+          "Unnamed: 3": NaN,
+          "Unnamed: 4": NaN,
+          "Unnamed: 5": NaN,
+          "Unnamed: 6": NaN,
+          "lat": 56.879635,
+          "lon": 24.603189
+        },
+        {
+          "Unnamed: 2": NaN,
+          "Unnamed: 3": NaN,
+          "Unnamed: 4": NaN,
+          "Unnamed: 5": NaN,
+          "Unnamed: 6": NaN,
+          "lat": 47.516231,
+          "lon": 14.550072
+        },
+        {
+          "Unnamed: 2": NaN,
+          "Unnamed: 3": NaN,
+          "Unnamed: 4": NaN,
+          "Unnamed: 5": NaN,
+          "Unnamed: 6": NaN,
+          "lat": 51.919438,
+          "lon": 19.145136
+        },
+        {
+          "Unnamed: 2": NaN,
+          "Unnamed: 3": NaN,
+          "Unnamed: 4": NaN,
+          "Unnamed: 5": NaN,
+          "Unnamed: 6": NaN,
+          "lat": 60.472024,
+          "lon": 8.468946
+        },
+        {
+          "Unnamed: 2": NaN,
+          "Unnamed: 3": NaN,
+          "Unnamed: 4": NaN,
+          "Unnamed: 5": NaN,
+          "Unnamed: 6": NaN,
+          "lat": 38.963745,
+          "lon": 35.243322
+        },
+        {
+          "Unnamed: 2": NaN,
+          "Unnamed: 3": NaN,
+          "Unnamed: 4": NaN,
+          "Unnamed: 5": NaN,
+          "Unnamed: 6": NaN,
+          "lat": 39.399872,
+          "lon": -8.224454
+        },
+        {
+          "Unnamed: 2": NaN,
+          "Unnamed: 3": NaN,
+          "Unnamed: 4": NaN,
+          "Unnamed: 5": NaN,
+          "Unnamed: 6": NaN,
+          "lat": -9.189967,
+          "lon": -75.015152
+        },
+        {
+          "Unnamed: 2": NaN,
+          "Unnamed: 3": NaN,
+          "Unnamed: 4": NaN,
+          "Unnamed: 5": NaN,
+          "Unnamed: 6": NaN,
+          "lat": 23.424076,
+          "lon": 53.847818
+        },
+        {
+          "Unnamed: 2": NaN,
+          "Unnamed: 3": NaN,
+          "Unnamed: 4": NaN,
+          "Unnamed: 5": NaN,
+          "Unnamed: 6": NaN,
+          "lat": 8.537981,
+          "lon": -80.782127
+        },
+        {
+          "Unnamed: 2": NaN,
+          "Unnamed: 3": NaN,
+          "Unnamed: 4": NaN,
+          "Unnamed: 5": NaN,
+          "Unnamed: 6": NaN,
+          "lat": -32.522779,
+          "lon": -55.765835
+        },
+        {
+          "Unnamed: 2": NaN,
+          "Unnamed: 3": NaN,
+          "Unnamed: 4": NaN,
+          "Unnamed: 5": NaN,
+          "Unnamed: 6": NaN,
+          "lat": -40.900557,
+          "lon": 174.885971
+        },
+        {
+          "Unnamed: 2": NaN,
+          "Unnamed: 3": NaN,
+          "Unnamed: 4": NaN,
+          "Unnamed: 5": NaN,
+          "Unnamed: 6": NaN,
+          "lat": 39.97778109,
+          "lon": 116.429591
+        },
+        {
+          "Unnamed: 2": NaN,
+          "Unnamed: 3": NaN,
+          "Unnamed: 4": NaN,
+          "Unnamed: 5": NaN,
+          "Unnamed: 6": NaN,
+          "lat": 53.41291,
+          "lon": -8.24389
+        },
+        {
+          "Unnamed: 2": NaN,
+          "Unnamed: 3": NaN,
+          "Unnamed: 4": NaN,
+          "Unnamed: 5": NaN,
+          "Unnamed: 6": NaN,
+          "lat": 9.748917,
+          "lon": -83.753428
+        },
+        {
+          "Unnamed: 2": NaN,
+          "Unnamed: 3": NaN,
+          "Unnamed: 4": NaN,
+          "Unnamed: 5": NaN,
+          "Unnamed: 6": NaN,
+          "lat": 64.963051,
+          "lon": -19.020835
+        },
+        {
+          "Unnamed: 2": NaN,
+          "Unnamed: 3": NaN,
+          "Unnamed: 4": NaN,
+          "Unnamed: 5": NaN,
+          "Unnamed: 6": NaN,
+          "lat": -14.235004,
+          "lon": -51.92528
+        },
+        {
+          "Unnamed: 2": NaN,
+          "Unnamed: 3": NaN,
+          "Unnamed: 4": NaN,
+          "Unnamed: 5": NaN,
+          "Unnamed: 6": NaN,
+          "lat": 55.169438,
+          "lon": 23.881275
+        },
+        {
+          "Unnamed: 2": NaN,
+          "Unnamed: 3": NaN,
+          "Unnamed: 4": NaN,
+          "Unnamed: 5": NaN,
+          "Unnamed: 6": NaN,
+          "lat": 22.396428,
+          "lon": 114.109497
+        },
+        {
+          "Unnamed: 2": NaN,
+          "Unnamed: 3": NaN,
+          "Unnamed: 4": NaN,
+          "Unnamed: 5": NaN,
+          "Unnamed: 6": NaN,
+          "lat": -1.831239,
+          "lon": -78.183406
+        },
+        {
+          "Unnamed: 2": NaN,
+          "Unnamed: 3": NaN,
+          "Unnamed: 4": NaN,
+          "Unnamed: 5": NaN,
+          "Unnamed: 6": NaN,
+          "lat": -30.559482,
+          "lon": 22.937506
+        },
+        {
+          "Unnamed: 2": NaN,
+          "Unnamed: 3": NaN,
+          "Unnamed: 4": NaN,
+          "Unnamed: 5": NaN,
+          "Unnamed: 6": NaN,
+          "lat": 18.735693,
+          "lon": -70.162651
+        },
+        {
+          "Unnamed: 2": NaN,
+          "Unnamed: 3": NaN,
+          "Unnamed: 4": NaN,
+          "Unnamed: 5": NaN,
+          "Unnamed: 6": NaN,
+          "lat": -0.789275,
+          "lon": 113.921327
+        }
+      ],
+      "filled": true,
+      "getFillColor": [
+        255,
+        140,
+        0
+      ],
+      "getLineColor": [
+        0,
+        0,
+        0
+      ],
+      "getPosition": "@@=coordinates",
+      "getRadius": 1,
+      "id": "7879dcce-c95b-4a50-9091-558c8eaec19e",
+      "lineWidthMinPixels": 1,
+      "opacity": 0.8,
+      "pickable": true,
+      "radiusMaxPixels": 100,
+      "radiusMinPixels": 1,
+      "radiusScale": 6,
+      "stroked": true
+    }
+  ],
+  "mapProvider": "carto",
+  "mapStyle": "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json",
+  "mapboxKey": "",
+  "views": [
+    {
+      "@@type": "MapView",
+      "controller": true
+    }
+  ]
+};
+    const tooltip = true;
+    const customLibraries = null;
+    const configuration = null;
+
+    const deckInstance = createDeck({
+                  container,
+      jsonInput,
+      tooltip,
+      customLibraries,
+      configuration
+    });
+
+  </script>
+</html>
